@@ -1,0 +1,93 @@
+/* Reset CSS */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Body styles */
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    color: #fff;
+    background-color: #1a1a1a;
+}
+
+/* Header styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #000;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.navigation {
+    display: flex;
+    list-style: none;
+}
+
+.navigation li {
+    margin-left: 20px;
+}
+
+.navigation a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.navigation a:hover {
+    text-decoration: underline;
+}
+
+/* Main content styles */
+.main-content {
+    padding: 40px;
+}
+
+/* Gallery styles */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 20px;
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Footer styles */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #000;
+}
+
+.social-media-links {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+.social-media-links li {
+    margin-right: 20px;
+}
+
+.social-media-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+}
+
+.social-media-links a:hover {
+    color: #ccc;
+}
