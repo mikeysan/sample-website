@@ -1,30 +1,14 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <div class="main-content">
-    <h1>Photo Gallery</h1>
-    <div class="gallery">
-      <img src="{{ url_for('static', filename='images/photo1.jpg') }}" alt="Photo 1" onclick="openModal(this)">
-      <img src="{{ url_for('static', filename='images/photo2.jpg') }}" alt="Photo 2" onclick="openModal(this)">
-      <img src="{{ url_for('static', filename='images/photo3.jpg') }}" alt="Photo 3" onclick="openModal(this)">
-      <img src="{{ url_for('static', filename='images/photo4.jpg') }}" alt="Photo 4" onclick="openModal(this)">
-    </div>
-    <div id="modal" class="modal">
-      <span class="close">&times;</span>
-      <img class="modal-content" id="modal-image">
-    </div>
+  <h1>Gallery</h1>
+  <div class="gallery">
+    {% for image in images %}
+      <a href="{{ url_for('static', filename='uploads/' + image) }}" data-lightbox="gallery">
+        <img src="{{ url_for('static', filename='uploads/' + image) }}">
+      </a>
+    {% endfor %}
   </div>
+  <h2>Upload a Photo</h2>
+  {% with messages = get_flashed_messages() %}
   
-  <script>
-    function openModal(img) {
-      var modal = document.getElementById("modal");
-      var modalImg = document.getElementById("modal-image");
-      modal.style.display = "block";
-      modalImg.src = img.src;
-      var span = document.getElementsByClassName("close")[0];
-      span.onclick = function() {
-        modal.style.display = "none";
-      }
-    }
-  </script>
-{% endblock %}
